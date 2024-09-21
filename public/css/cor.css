@@ -1,0 +1,30 @@
+.bg_verde{
+    background-color: #28a745;
+}
+.dash1{
+    background-color: #09641e;
+}
+.hover1{
+    background-color: #28a745;
+    transition:0.6s;
+}
+.hover1:hover{
+    background-color: #158f31;
+    margin-left: 5px;
+}
+.modal-title{
+    color: white;
+    font-weight: 700;
+}
+.color-white{
+    color: white;
+}
+.no-hover:hover {
+    text-decoration: none;
+    color: white;
+}
+.tabela_texto_cor{
+    color: rgb(48, 48, 48);
+}
+/* bg-gradient-primary */
+/* cor padrao:#2abd6c */
