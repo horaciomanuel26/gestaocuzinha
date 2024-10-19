@@ -30,7 +30,7 @@
         </a>
     </li>
     <li class="nav-item active hover1">
-        <a class="nav-link" href="tables.html">
+        <a class="nav-link" href="{{ route('posto.index') }}">
             <i class="fas fa-gas-pump"></i>
             <span>Posto</span>
         </a>
@@ -61,6 +61,16 @@
         <a class="nav-link" href="tables.html">
             <i class="fas fa-arrow-circle-left"></i>
             <span>Volta</span>
+        </a>
+    </li>
+    <!-- configuração -->
+    <div class="sidebar-heading">
+        configuração
+    </div>
+    <li class="nav-item active hover1">
+        <a class="nav-link" href="tables.html">
+            <i class="fas fa-users"></i>
+            <span>Usuarios</span>
         </a>
     </li>
     <!-- Título -->

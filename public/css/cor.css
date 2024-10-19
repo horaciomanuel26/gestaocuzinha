@@ -28,3 +28,12 @@
 }
 /* bg-gradient-primary */
 /* cor padrao:#2abd6c */
+.bg-azul{
+    background-color: rgb(0, 116, 183);
+}
+.bg-vermelho{
+    background-color: rgb(229, 0, 34);
+}
+.bg-verde{
+    background-color: rgb(0, 185, 68);
+}

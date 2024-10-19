@@ -2,7 +2,7 @@
 @section('content')
 <div class="container-fluid">
     <!-- Título da View -->
-    <h1 class="h3 mb-2 text-gray-800">Clientes</h1>
+    <h1 class="h3 mb-2 text-gray-800">Postos</h1>
     <!-- Fim Título da View -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -26,26 +26,26 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($clientes as $cliente)
+                        @foreach ($postos as $posto)
                         <tr>
-                            <td>{{ $cliente->id }}</td>
-                            <td>{{ $cliente->vc_nome }}</td>
-                            <td>{{ $cliente->vc_telefone }}</td>
-                            <td>{{ $cliente->vc_email }}</td>
-                            <td>{{ $cliente->vc_nif }}</td>
+                            <td>{{ $posto->id }}</td>
+                            <td>{{ $posto->vc_nome }}</td>
+                            <td>{{ $posto->vc_telefone }}</td>
+                            <td>{{ $posto->vc_email }}</td>
+                            <td>{{ $posto->vc_nif }}</td>
                             <td>
-                                <a href="{{ route('cliente.deletar', $cliente->id) }}" class="btn1 bg-vermelho">Deletar</a>
+                                <a href="{{ route('posto.deletar', $posto->id) }}" class="btn1 bg-vermelho">Deletar</a>
                                 
                                 <button type="button" class="btn1 bg-verde" data-toggle="modal"
-                                    data-target="#formEditarModal{{ $cliente->id }}" id="formEditarModal{{ $cliente->id }}">Editar</button>
+                                    data-target="#formEditarModal{{ $posto->id }}" id="formEditarModal{{ $posto->id }}">Editar</button>
                             </td>
                         </tr>
                         
-                        <!-- Modal de Edição para cada cliente -->
-                        <div class="modal fade" id="formEditarModal{{ $cliente->id }}" tabindex="-1" role="dialog"
+                        <!-- Modal de Edição para cada posto -->
+                        <div class="modal fade" id="formEditarModal{{ $posto->id }}" tabindex="-1" role="dialog"
                             aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
-                                @include('_admin.cliente.editar.index', ['cliente' => $cliente])
+                                @include('_admin.posto.editar.index', ['posto' => $posto])
                             </div>
                         </div>
                         <!-- Fim Modal de Edição -->
@@ -58,28 +58,28 @@
     <!-- Modal de Cadastro -->
     <div class="modal fade" id="formCadastrarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            @include('_admin.cliente.cadastrar.index')
+            @include('_admin.posto.cadastrar.index')
         </div>
     </div>
     <!-- Fim Modal de Cadastro -->
 </div>
 
 {{--cadastrar alert --}}
-@if(session('success.cliente'))
+@if(session('success.posto'))
     <script>
         Swal.fire({
-        title: 'Cliente',
-        text: 'cliente cadastrado com sucesso',
+        title: 'posto',
+        text: 'posto cadastrado com sucesso',
         icon: 'success',
         confirmButtonText: 'confirmado'
       })
     </script>
 @endif
-@if(session('erro.cliente.success'))
+@if(session('erro.posto.success'))
     <script>
         Swal.fire({
-        title: 'Cliente',
-        text: 'cliente cadastrado com sucesso',
+        title: 'posto',
+        text: 'posto cadastrado com sucesso',
         icon: 'erro',
         confirmButtonText: 'confirmado'
       })
@@ -87,21 +87,21 @@
 @endif
 {{--editar alert --}}
 {{--eliminar alert --}}
-@if(session('success.cliente.eliminar'))
+@if(session('success.posto.eliminar'))
     <script>
         Swal.fire({
-        title: 'Cliente',
-        text: 'cliente eliminado com sucesso',
+        title: 'posto',
+        text: 'posto eliminado com sucesso',
         icon: 'success',
         confirmButtonText: 'confirmado'
       })
     </script>
 @endif
-@if(session('erro.cliente.eliminar'))
+@if(session('erro.posto.eliminar'))
     <script>
         Swal.fire({
-        title: 'Cliente',
-        text: 'Erro ao eliminar cliente',
+        title: 'posto',
+        text: 'Erro ao eliminar posto',
         icon: 'erro',
         confirmButtonText: 'confirmado'
       })
